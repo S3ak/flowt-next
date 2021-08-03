@@ -1,5 +1,11 @@
 :root {
   --bg-main: purple;
+  --w-container: 1000px;
+  --w-content: 800px;
+  --z-rear: 100;
+  --z-background: 200;
+  --z-forefront: 400;
+  --z-foreground: 300;
 }
 
 html {
