@@ -16,7 +16,7 @@ export default function Home() {
 
       <main className={s.lMain}>
         <section className={u.uForeGround}>
-          <figure className={s.logo}>
+          <figure className={`${s.logo} animate__animated animate__fadeInUp`}>
             <Image
               src={ImgHero}
               className={s.logo}
