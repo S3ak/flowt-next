@@ -3,7 +3,6 @@ import Image from "next/Image";
 import s from "../styles/Splash.module.css";
 import u from "../styles/Utility.module.css";
 import ImgHero from "../public/media/flow-logo--portrait@4x.png";
-import "animate.css";
 
 export default function Home() {
   return (
@@ -28,8 +27,6 @@ export default function Home() {
           </figure>
         </section>
       </main>
-
-      <footer className={styles.footer}></footer>
     </div>
   );
 }
