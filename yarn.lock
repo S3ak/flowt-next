@@ -188,6 +188,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fullstory/browser@^1.4.9":
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/@fullstory/browser/-/browser-1.4.9.tgz#e350d779caa1ba56bed22615d9b157efbefa7b47"
+  integrity sha512-h8ihrXT8pGemh5n7CKrukkEbbRIuCi0I/GJKI8DJpGyloI4WNTX5SC8Aihec7ScfK6Fi6ZpiLkGP3hogZqoNWw==
+
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz#ab7043b037e68b722f93f376afb05e85c0699523"
@@ -2608,11 +2613,6 @@ react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react-paystack@^3.0.3:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/react-paystack/-/react-paystack-3.0.4.tgz#c4ddb0b4ef257af7f9f18438489aeeea98dba8b6"
-  integrity sha512-4M2s2Vxcf09WIsrK/Tlf7Ah47UG0lECL7I+bD5i2Qb3pZNOhLXgas25lCLY25FpZz6GPiVtbY0+4QcKPQdsd6g==
 
 react-refresh@0.8.3:
   version "0.8.3"
