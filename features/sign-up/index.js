@@ -1,12 +1,22 @@
+import { useState } from "react";
 import { useFormik } from "formik";
-import { mutate } from "swr";
 
 import { FormField, Label, Input, Message, Form, Wrapper } from "./styled";
 import validationSchema, { signUpFormSchema } from "./validationSchema";
-import createAccount, { endPoint } from "./api";
+import createAccount from "./api";
 
 export default function SignUpForm() {
-  const { handleSubmit, handleChange, values, errors, touched } = useFormik({
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState(null);
+
+  const {
+    handleSubmit,
+    handleChange,
+    values,
+    errors,
+    touched,
+    resetForm,
+  } = useFormik({
     initialValues: {
       fullName: "",
       userName: "",
@@ -15,28 +25,46 @@ export default function SignUpForm() {
       mobileNumber: "",
     },
     validationSchema,
-    onSubmit: ({ email, userName, fullName, mobileNumber }) => {
+    onSubmit: async ({ email, userName, fullName, mobileNumber }) => {
       const nameArr = fullName.split(" ");
       const firstName = nameArr[0];
       const lastName = nameArr[nameArr.length - 1];
 
-      mutate(endPoint, {
-        first_name: firstName,
-        last_name: lastName,
-        email,
-        handle: userName,
-        mobile_number: mobileNumber,
-      });
+      try {
+        const { data } = await createAccount({
+          first_name: firstName,
+          last_name: lastName,
+          email,
+          handle: userName,
+          mobile_number: mobileNumber,
+        });
 
-      createAccount({
-        first_name: firstName,
-        last_name: lastName,
-        email,
-        handle: userName,
-        mobile_number: mobileNumber,
-      });
+        setIsSuccess(true);
+      } catch (error) {
+        setError(error);
+      }
+
+      resetForm();
     },
   });
+
+  if (error) {
+    return (
+      <Wrapper>
+        <div>Something went wrong</div>
+      </Wrapper>
+    );
+  }
+
+  if (isSuccess) {
+    return (
+      <Wrapper>
+        <div>
+          You&apos;ve been registered, Get ready to start receiving money
+        </div>
+      </Wrapper>
+    );
+  }
 
   return (
     <Wrapper>

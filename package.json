@@ -31,6 +31,7 @@
     "babel-loader": "^8.2.2",
     "cypress": "^8.3.0",
     "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1"
+    "eslint-config-next": "11.0.1",
+    "miragejs": "^0.1.41"
   }
 }
