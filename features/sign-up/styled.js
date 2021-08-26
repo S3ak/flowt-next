@@ -15,6 +15,9 @@ export const Form = styled.form`
   padding: var(--size-l);
   background: white;
   border-radius: 16px;
+
+  animation: fadeIn;
+  animation-duration: 2s;
 `;
 
 export const FormField = styled.div`
