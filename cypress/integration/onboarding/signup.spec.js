@@ -13,7 +13,7 @@ describe("Sign up", () => {
     const expectedEmail = "bob@mail.com";
     const expectedPassword = "P@55W0rd!12345";
 
-    cy.intercept("POST", "*/sign-up", {
+    cy.intercept("POST", "*/signup", {
       statusCode: 200,
       body: {
         data: {
