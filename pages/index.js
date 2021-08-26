@@ -1,10 +1,24 @@
+import { useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
+import { useRouter } from "next/router";
+
 import s from "../styles/Splash.module.css";
 import u from "../styles/Utility.module.css";
-import ImgHero from "../public/media/flow-logo--portrait@4x.png";
+import LandingScene from "../modules/landing-page";
+
+const DURATION = 1000 * 3;
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push("/sign-up");
+    }, DURATION);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className={u.lApp}>
       <Head>
@@ -14,18 +28,7 @@ export default function Home() {
       </Head>
 
       <main className={s.lMain}>
-        <section className={u.uForeGround}>
-          <figure className={`${s.logo} animate__animated animate__fadeInUp`}>
-            <Image
-              src={ImgHero}
-              className={s.logo}
-              alt="Picture of the author"
-              priority
-              width="128.37px"
-              height="189.19px"
-            />
-          </figure>
-        </section>
+        <LandingScene />
       </main>
     </div>
   );
