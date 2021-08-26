@@ -7,7 +7,7 @@ export default function SignUp() {
   return (
     <div className={u.lApp}>
       <Head>
-        <title>Sign Up</title>
+        <title>Flowt Sign Up</title>
         <meta name="description" content="Sign up for a Flowt account" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
