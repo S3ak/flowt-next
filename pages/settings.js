@@ -1,19 +1,20 @@
 import Head from "next/head";
+
 import s from "../styles/Splash.module.css";
 import u from "../styles/Utility.module.css";
-import SignUpForm from "../features/sign-up";
+import ComingSoon from "../features/coming-soon";
 
-export default function SignUp() {
+export default function Settings() {
   return (
     <>
       <Head>
-        <title>Flowt Sign Up</title>
-        <meta name="description" content="Sign up for a Flowt account" />
+        <title>Settings</title>
+        <meta name="description" content="Settings" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div>
-        <SignUpForm />
+        <ComingSoon />
       </div>
     </>
   );
