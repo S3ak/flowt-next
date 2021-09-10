@@ -1,8 +1,8 @@
 import Head from "next/head";
 
-import s from "../styles/Splash.module.css";
-import u from "../styles/Utility.module.css";
-import ComingSoon from "../features/coming-soon";
+import Section from "../components/section";
+import Beneficiaries from "../features/beneficiaries";
+import RequestForm from "../features/request-form";
 
 export default function RequestFlowt() {
   return (
@@ -13,9 +13,10 @@ export default function RequestFlowt() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <>
-        <ComingSoon />
-      </>
+      <Section>
+        <Beneficiaries />
+        <RequestForm />
+      </Section>
     </>
   );
 }

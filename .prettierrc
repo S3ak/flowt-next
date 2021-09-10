@@ -1,3 +1,4 @@
-# Ignore artifacts:
-build
-coverage
+{
+  "semi": true,
+  "printWidth": 80
+}

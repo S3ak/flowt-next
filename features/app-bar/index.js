@@ -1,21 +1,22 @@
 import Link from "next/link";
+import { FaHome, FaArrowsAltV, FaUser } from "react-icons/fa";
 
 import { Wrapper, List, Item } from "./styled";
 
 export default function AppBar() {
   const items = [
     {
-      label: "Home",
+      label: <FaHome />,
       path: "/home",
       id: "home",
     },
     {
-      label: "Activity",
+      label: <FaArrowsAltV />,
       path: "/activity",
       id: "activity",
     },
     {
-      label: "Profile",
+      label: <FaUser />,
       path: "/profile",
       id: "profile",
     },

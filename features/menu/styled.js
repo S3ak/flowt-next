@@ -17,5 +17,16 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   flex: 1 1 auto;
-  padding: var(--size-s);
+
+  a {
+    display: block;
+    padding: var(--size-s);
+    min-height: 45px;
+    min-width: 45px;
+    cursor: pointer;
+  }
+
+  :hover {
+    color: var(--c-action--hover);
+  }
 `;

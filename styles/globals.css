@@ -21,6 +21,7 @@
   --c-success: var(--color-secondary);
   --c-danger: var(--color-septenary);
   --c-action: var(--color-senary);
+  --c-action--hover: #3655df;
   --c-info: var(--color-quaternary);
   --c-muted: #bdbdbd;
   --c-accent: var(--color-quinary);
