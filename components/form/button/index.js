@@ -1,18 +1,26 @@
+import React from "react";
 import styled from "styled-components";
 
-const Button = styled.button`
-  min-height: 45px;
-  min-width: 100px;
-  background: var(--c-action);
-  color: var(--c-text--inverse);
-  padding: var(--size-xs);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 0px solid transparent;
-  border-radius: var(--radius-m);
-  appearance: none;
-  outline: 0;
+import { buttonMixin } from "../../button";
+
+const ImgButton = styled.button`
+  ${buttonMixin};
 `;
+
+const TextButton = styled.a`
+  color: var(--c-action);
+  cursor: pointer;
+`;
+
+const Button = React.forwardRef(function ForwaredButton(
+  { children, kind = "default" },
+  ref
+) {
+  if (kind === "text") {
+    return <TextButton ref={ref}>{children}</TextButton>;
+  }
+
+  return <ImgButton ref={ref}>{children}</ImgButton>;
+});
 
 export default Button;

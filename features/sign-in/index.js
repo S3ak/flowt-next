@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 
+import { useRouter } from "next/router";
 import Link from "next/link";
 
-import { FormField, Label, Input, Message, Form, Wrapper } from "./styled";
+import { Wrapper, Block, ActionSection } from "./styled";
 import validationSchema, { signInFormSchema } from "./validationSchema";
-import { useRouter } from "next/router";
+
+import Text from "../../components/text";
+import Form from "../../components/form";
+import Button from "../../components/form/button";
+import Input from "../../components/form/input-field";
 
 export default function SignInForm() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -64,30 +69,44 @@ export default function SignInForm() {
       <Form onSubmit={handleSubmit}>
         {signInFormSchema.map(({ id, label, type, placeholder }) => {
           return (
-            <FormField key={id}>
-              <Label htmlFor={id}>{label}</Label>
-
-              <Input
-                id={id}
-                name={id}
-                type={type}
-                value={values[id]}
-                placeholder={placeholder}
-                onChange={handleChange}
-              />
-
-              {errors[id] && touched[id] && <Message>{errors[id]}</Message>}
-            </FormField>
+            <Input
+              key={id}
+              name={id}
+              type={type}
+              value={values[id]}
+              placeholder={placeholder}
+              onChange={handleChange}
+              hasError={errors[id] && touched[id]}
+              isSuccess={touched[id] && !errors[id]}
+              message={errors[id]}
+            />
           );
         })}
 
-        <button type="submit">Submit</button>
+        <ActionSection>
+          <Button type="submit">Sign In</Button>
 
-        <br />
-        <Link href="/sign-up">
-          <a>Sign up</a>
-        </Link>
+          <Link href="/forgot-password" passHref>
+            <Button kind="text">Forgot your password?</Button>
+          </Link>
+        </ActionSection>
       </Form>
+
+      <br />
+
+      <Block>
+        <Text>
+          Don&apos;t have an account?{" "}
+          <Link href="/sign-up" passHref>
+            <Button kind="text">Sign up</Button>
+          </Link>
+        </Text>
+
+        <Text as="small">
+          This site is protected by reCAPTCHA and the Google Privacy Policy and
+          Terms of Service apply.
+        </Text>
+      </Block>
     </Wrapper>
   );
 }

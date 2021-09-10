@@ -1,5 +1,3 @@
-import { useFormik } from "formik";
-
 import Link from "next/link";
 
 import { Wrapper } from "./styled";

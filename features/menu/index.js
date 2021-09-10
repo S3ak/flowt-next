@@ -7,37 +7,30 @@ export default function NavigationMenu() {
     {
       label: "Home",
       path: "/home",
-      key: "home",
     },
     {
       label: "Send Flowt",
       path: "/send-flowt",
-      key: "send",
     },
     {
       label: "Request Flowt",
       path: "/request-flowt",
-      key: "request",
     },
     {
       label: "Flowt Your Bowt",
       path: "/flowt",
-      key: "flowt",
     },
     {
       label: "Activity",
       path: "/activity",
-      key: "activity",
     },
     {
       label: "Profile",
       path: "/profile",
-      key: "profile",
     },
     {
       label: "Settings",
       path: "/settings",
-      key: "settings",
     },
   ];
 
@@ -46,7 +39,7 @@ export default function NavigationMenu() {
       <List>
         {items.map(({ key, label, path }) => {
           return (
-            <Item key={key}>
+            <Item key={label}>
               <Link href={path}>
                 <a>{label}</a>
               </Link>
