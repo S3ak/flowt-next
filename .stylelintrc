@@ -1,0 +1,6 @@
+{
+  "presets": ["stylelint-prettier"],
+  "rules": {
+    "prettier/prettier": true
+  }
+}
