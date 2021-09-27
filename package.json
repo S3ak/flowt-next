@@ -14,6 +14,7 @@
     "cypress:run": "cypress run"
   },
   "dependencies": {
+    "@storybook/eslint-config-storybook": "^3.1.2",
     "animate.css": "^4.1.1",
     "formik": "^2.2.9",
     "next": "11.0.1",
@@ -35,6 +36,8 @@
     "cypress": "^8.3.0",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest-plugins-recommended": "^2.9.0",
     "miragejs": "^0.1.41",
     "prettier": "2.3.2"
   }
