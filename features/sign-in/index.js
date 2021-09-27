@@ -12,7 +12,7 @@ import Form from '../../components/form';
 import Button from '../../components/form/button';
 import Input from '../../components/form/input-field';
 
-import useAuth from '../../hooks/auth/useAuth';
+import useAuth from '../../libs/auth/useAuth';
 
 export default function SignInForm() {
   const [isSuccess, setIsSuccess] = useState(false);

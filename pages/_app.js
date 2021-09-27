@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import 'animate.css';
 
-import { AuthProvider } from '../hooks/auth/useAuth';
+import { AuthProvider } from '../libs/auth/useAuth';
 import { NavProvider } from '../libs/nav/useNav';
 import AppLayout from '../modules/app-layout';
 
