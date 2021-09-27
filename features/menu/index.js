@@ -1,52 +1,36 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Wrapper, List, Item } from "./styled";
+import { useState } from 'react';
 
-export default function NavigationMenu() {
-  const items = [
-    {
-      label: "Home",
-      path: "/home",
-    },
-    {
-      label: "Send Flowt",
-      path: "/send-flowt",
-    },
-    {
-      label: "Request Flowt",
-      path: "/request-flowt",
-    },
-    {
-      label: "Flowt Your Bowt",
-      path: "/flowt",
-    },
-    {
-      label: "Activity",
-      path: "/activity",
-    },
-    {
-      label: "Profile",
-      path: "/profile",
-    },
-    {
-      label: "Settings",
-      path: "/settings",
-    },
-  ];
+import { Wrapper, List, Item, Header, Main, Footer } from './styled';
+import useNavigation from './service.js';
+
+export default function NavigationMenu({ defaultOpenState = false }) {
+  const { items, isOpen } = useNavigation();
+
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     <Wrapper>
-      <List>
-        {items.map(({ key, label, path }) => {
-          return (
-            <Item key={label}>
-              <Link href={path}>
-                <a>{label}</a>
-              </Link>
-            </Item>
-          );
-        })}
-      </List>
+      <Header></Header>
+
+      <Main>
+        <List>
+          {items.map(({ label, path }) => {
+            return (
+              <Item key={label}>
+                <Link href={path}>
+                  <a>{label}</a>
+                </Link>
+              </Item>
+            );
+          })}
+        </List>
+      </Main>
+
+      <Footer></Footer>
     </Wrapper>
   );
 }

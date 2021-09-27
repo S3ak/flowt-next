@@ -1,13 +1,16 @@
-import Link from "next/link";
+import { useRouter } from 'next/router';
 
-import { Wrapper, FirstCol, LastCol } from "./styled";
-import NavigationMenu from "../menu";
+import { Wrapper, FirstCol, LastCol } from './styled';
+import NavigationMenu from '../menu';
 
-import Title from "../../components/title";
+import Title from '../../components/title';
+import useNavigation from '../menu/service';
 
 export default function NavBar() {
+  const { pathname } = useRouter();
+  const { navTitle } = useNavigation();
   // TODO: Create Observer
-  const title = "Title";
+  const title = navTitle;
 
   return (
     <Wrapper>
