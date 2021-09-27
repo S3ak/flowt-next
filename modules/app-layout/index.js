@@ -1,11 +1,11 @@
-import AppContainer from "../../components/app-container";
-import Header from "../../components/header";
-import NavBar from "../../features/nav-bar";
-import Main from "../../components/main";
-import Footer from "../../components/footer";
-import AppBar from "../../features/app-bar";
+import AppContainer from '../../components/app-container';
+import Header from '../../components/header';
+import NavBar from '../../features/nav-bar';
+import Main from '../../components/main';
+import Footer from '../../components/footer';
+import AppBar from '../../features/app-bar';
 
-export default function AppLayout({ children }) {
+export function AppLayout({ children }) {
   return (
     <AppContainer>
       <Header>
@@ -20,3 +20,7 @@ export default function AppLayout({ children }) {
     </AppContainer>
   );
 }
+
+export const getLayout = (page) => <AppLayout>{page}</AppLayout>;
+
+export default AppLayout;

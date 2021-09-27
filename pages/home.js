@@ -1,12 +1,11 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import Section from "../components/section";
+import Section from '../components/section';
 
-import Timeline from "../features/timeline";
+import Timeline from '../features/timeline';
+import { getLayout } from '../modules/app-layout';
 
-export default function Home() {
-  const username = "username";
-
+export function Home() {
   return (
     <>
       <Head>
@@ -21,3 +20,7 @@ export default function Home() {
     </>
   );
 }
+
+Home.getLayout = getLayout;
+
+export default Home;

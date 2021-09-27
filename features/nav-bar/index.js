@@ -1,25 +1,31 @@
-import { useRouter } from 'next/router';
+import { FaBars } from 'react-icons/fa';
 
-import { Wrapper, FirstCol, LastCol } from './styled';
+import { Wrapper, LastCol, MidCol, Toggle, NavContainer } from './styled';
 import NavigationMenu from '../menu';
 
 import Title from '../../components/title';
-import useNavigation from '../menu/service';
+import useNav from '../../libs/nav/useNav';
 
 export default function NavBar() {
-  const { pathname } = useRouter();
-  const { navTitle } = useNavigation();
-  // TODO: Create Observer
-  const title = navTitle;
+  const { isOpen, toggleNav, selectedItem } = useNav();
+  const title = selectedItem;
 
   return (
     <Wrapper>
-      <FirstCol>
-        <NavigationMenu />
-      </FirstCol>
+      <MidCol>
+        <Title>{title}</Title>
+      </MidCol>
 
       <LastCol>
-        <Title>{title}</Title>
+        <Toggle onClick={toggleNav}>
+          <FaBars />
+        </Toggle>
+
+        {isOpen && (
+          <NavContainer>
+            <NavigationMenu />
+          </NavContainer>
+        )}
       </LastCol>
     </Wrapper>
   );

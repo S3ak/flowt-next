@@ -1,11 +1,11 @@
-import Head from "next/head";
-import Image from "next/image";
+import Head from 'next/head';
+import Image from 'next/image';
 
-import s from "../styles/Splash.module.css";
-import ImgHero from "../public/media/flow-logo--portrait@4x.png";
-import SignInForm from "../features/sign-in";
-import Section from "../components/section";
-import Heading from "../components/heading";
+import s from '../styles/Splash.module.css';
+import ImgHero from '../public/media/flow-logo--portrait@4x.png';
+import SignInForm from '../features/sign-in';
+import Section from '../components/section';
+import Heading from '../components/heading';
 
 export default function SignIn() {
   return (
@@ -29,6 +29,7 @@ export default function SignIn() {
 
       <Section>
         <Heading>Welcome to Flowt</Heading>
+
         <SignInForm />
       </Section>
     </>

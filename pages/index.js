@@ -1,20 +1,16 @@
-import { useEffect } from "react";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import { useEffect } from 'react';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import s from "../styles/Splash.module.css";
-import u from "../styles/Utility.module.css";
-import LandingScene from "../modules/landing-page";
+import LandingScene from '../modules/landing-layout';
 
 const DURATION = 1000 * 2;
 
 export default function Splash() {
-  const router = useRouter();
+  const { push } = useRouter();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      router.push("/sign-in");
-    }, DURATION);
+    const timer = setTimeout(() => push('/sign-in'), DURATION);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

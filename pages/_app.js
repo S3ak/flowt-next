@@ -1,13 +1,19 @@
-import "../styles/globals.css";
-import "animate.css";
+import '../styles/globals.css';
+import 'animate.css';
 
-import AppLayout from "../modules/app-layout";
+import { AuthProvider } from '../hooks/auth/useAuth';
+import { NavProvider } from '../libs/nav/useNav';
+import AppLayout from '../modules/app-layout';
 
 function MyApp({ Component, pageProps }) {
+  const getLayout = Component.getLayout || ((page) => page);
+
   return (
-    <AppLayout>
-      <Component {...pageProps} />
-    </AppLayout>
+    <AuthProvider>
+      <NavProvider>
+        <AppLayout>{getLayout(<Component {...pageProps} />)}</AppLayout>
+      </NavProvider>
+    </AuthProvider>
   );
 }
 

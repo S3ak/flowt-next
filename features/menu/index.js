@@ -1,20 +1,19 @@
 import Link from 'next/link';
+import { FaTimes } from 'react-icons/fa';
 
-import { useState } from 'react';
+import { Wrapper, List, Item, Header, Main, Footer, Toggle } from './styled';
+import useNav from '../../libs/nav/useNav';
 
-import { Wrapper, List, Item, Header, Main, Footer } from './styled';
-import useNavigation from './service.js';
-
-export default function NavigationMenu({ defaultOpenState = false }) {
-  const { items, isOpen } = useNavigation();
-
-  if (!isOpen) {
-    return null;
-  }
+export default function NavigationMenu() {
+  const { items, toggleNav } = useNav();
 
   return (
     <Wrapper>
-      <Header></Header>
+      <Header>
+        <Toggle onClick={toggleNav}>
+          <FaTimes />
+        </Toggle>
+      </Header>
 
       <Main>
         <List>

@@ -18,6 +18,7 @@
   --color-senary: #4361ee;
   --color-septenary: #d00000;
   --color-black: #021526;
+  --color-white: #fff;
   --color-gradrient-primary: radial-gradient(
     203.27% 102.9% at 50% -2.9%,
     #441ab8 0%,
@@ -32,7 +33,7 @@
   --c-accent: var(--color-quinary);
   --c-text: var(--color-black);
   --c-text--inverse: var(--color-primary);
-  --c-bg: var(--color-primary);
+  --c-bg: var(--color-white);
   --c-bg--inverse: var(--color-gradrient-primary);
 
   --color-intent-bg: linear-gradient(
