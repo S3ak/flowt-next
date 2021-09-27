@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Section from '../components/section';
 
 import Timeline from '../features/timeline';
-import { getLayout } from '../modules/app-layout';
 
 export function Home() {
   return (
@@ -20,7 +19,5 @@ export function Home() {
     </>
   );
 }
-
-Home.getLayout = getLayout;
 
 export default Home;

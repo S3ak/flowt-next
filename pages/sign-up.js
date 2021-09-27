@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import SignUpForm from '../features/sign-up';
 
+import Layout from '../layouts/Minimal';
+
 export default function SignUp() {
   return (
     <>
@@ -14,3 +16,7 @@ export default function SignUp() {
     </>
   );
 }
+
+SignUp.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

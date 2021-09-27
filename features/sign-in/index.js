@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 
 import { useRouter } from 'next/router';
@@ -18,7 +18,7 @@ export default function SignInForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState(null);
   const { push } = useRouter();
-  const { login } = useAuth();
+  const { login, logout } = useAuth();
 
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
@@ -44,6 +44,10 @@ export default function SignInForm() {
         resetForm();
       },
     });
+
+  useEffect(() => {
+    logout();
+  }, []);
 
   if (error) {
     return (

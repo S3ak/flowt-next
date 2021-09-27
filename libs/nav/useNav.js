@@ -3,6 +3,11 @@ import { useState, useContext, createContext, useCallback } from 'react';
 
 export const defaultNavItems = [
   {
+    label: 'Splash',
+    path: '/',
+    isVisible: false,
+  },
+  {
     label: 'Home',
     path: '/home',
     isVisible: true,
@@ -35,19 +40,24 @@ export const defaultNavItems = [
   {
     label: 'Sign Up',
     path: '/sign-up',
-    isVisible: true,
+    isVisible: false,
   },
   {
     label: 'Login',
     path: '/sign-in',
-    isVisible: true,
+    isVisible: false,
+  },
+  {
+    label: 'Forgot Password',
+    path: '/forgot-password',
+    isVisible: false,
   },
 ];
 
 const NavContext = createContext();
 
 export function findCurrentItemByPathName(list = [], pathName = 'string') {
-  return list.find(({ path }) => path === pathName).label;
+  return list.find(({ path }) => path === pathName).label || 'Not Found';
 }
 
 export const useProvideNav = () => {

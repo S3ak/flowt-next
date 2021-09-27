@@ -7,6 +7,8 @@ import SignInForm from '../features/sign-in';
 import Section from '../components/section';
 import Heading from '../components/heading';
 
+import Layout from '../layouts/Minimal';
+
 export default function SignIn() {
   return (
     <>
@@ -35,3 +37,7 @@ export default function SignIn() {
     </>
   );
 }
+
+SignIn.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
