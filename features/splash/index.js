@@ -1,7 +1,7 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { Wrapper, Logo } from './styled';
-import ImgHero from '../../public/media/flow-logo--portrait@4x.png';
+import { Wrapper, Logo } from "./styled";
+import ImgHero from "../../public/media/flow-logo--portrait@4x.png";
 
 export default function Splash() {
   return (

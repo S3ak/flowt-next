@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { useEffect } from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import Splash from '../features/splash';
-import Layout from '../layouts/Minimal';
+import Splash from "../features/splash";
+import Layout from "../layouts/Minimal";
 
 const DURATION = 1000 * 2;
 export default function Index() {
   const { push } = useRouter();
 
   useEffect(() => {
-    const timer = setTimeout(() => push('/sign-in'), DURATION);
+    const timer = setTimeout(() => push("/sign-in"), DURATION);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
