@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import LandingScene from '../modules/landing-layout';
+import Splash from '../features/splash';
+import Layout from '../layouts/Minimal';
 
 const DURATION = 1000 * 2;
-
-export default function Splash() {
+export default function Index() {
   const { push } = useRouter();
 
   useEffect(() => {
@@ -23,7 +23,11 @@ export default function Splash() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <LandingScene />
+      <Splash />
     </>
   );
 }
+
+Index.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
