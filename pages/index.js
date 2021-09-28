@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import Splash from "../features/splash";
-import Layout from "../layouts/Minimal";
+import Layout from "../layouts/minimal";
 
 const DURATION = 1000 * 2;
 export default function Index() {

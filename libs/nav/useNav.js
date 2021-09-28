@@ -1,63 +1,63 @@
-import { useRouter } from 'next/router';
-import { useState, useContext, createContext, useCallback } from 'react';
+import { useRouter } from "next/router";
+import { useState, useContext, createContext, useCallback } from "react";
 
 export const defaultNavItems = [
   {
-    label: 'Splash',
-    path: '/',
+    label: "Splash",
+    path: "/",
     isVisible: false,
   },
   {
-    label: 'Home',
-    path: '/home',
+    label: "Home",
+    path: "/home",
     isVisible: true,
   },
   {
-    label: 'Send Flowt',
-    path: '/send-flowt',
+    label: "Send Flowt",
+    path: "/send-flowt",
     isVisible: true,
   },
   {
-    label: 'Request Flowt',
-    path: '/request-flowt',
+    label: "Request Flowt",
+    path: "/request-flowt",
     isVisible: true,
   },
   {
-    label: 'Flowt Your Bowt',
-    path: '/flowt',
+    label: "Flowt Your Bowt",
+    path: "/flowt",
     isVisible: true,
   },
   {
-    label: 'Activity',
-    path: '/activity',
+    label: "Activity",
+    path: "/activity",
     isVisible: true,
   },
   {
-    label: 'Profile',
-    path: '/profile',
+    label: "Profile",
+    path: "/profile",
     isVisible: true,
   },
   {
-    label: 'Sign Up',
-    path: '/sign-up',
+    label: "Sign Up",
+    path: "/sign-up",
     isVisible: false,
   },
   {
-    label: 'Login',
-    path: '/sign-in',
+    label: "Login",
+    path: "/sign-in",
     isVisible: false,
   },
   {
-    label: 'Forgot Password',
-    path: '/forgot-password',
+    label: "Forgot Password",
+    path: "/forgot-password",
     isVisible: false,
   },
 ];
 
 const NavContext = createContext();
 
-export function findCurrentItemByPathName(list = [], pathName = 'string') {
-  return list.find(({ path }) => path === pathName).label || 'Not Found';
+export function findCurrentItemByPathName(list = [], pathName = "string") {
+  return list.find(({ path }) => path === pathName).label || "Not Found";
 }
 
 export const useProvideNav = () => {

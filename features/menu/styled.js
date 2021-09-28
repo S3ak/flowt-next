@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { unstyledListMixin } from '../../styles/globalMixins';
+import styled, { css } from "styled-components";
+import { unstyledListMixin } from "../../styles/globalMixins";
 
 export const Wrapper = styled.div`
   width: 100%;

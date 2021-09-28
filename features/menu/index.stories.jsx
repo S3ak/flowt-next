@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import NavigationMenu from './index';
+import NavigationMenu from "./index";
 
 export default {
-  title: 'Features/Menu',
+  title: "Features/Menu",
   component: NavigationMenu,
   argTypes: {},
 };

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import { Page } from './Page';
+import { Page } from "./Page";
 
 export default {
-  title: 'Example/Page',
+  title: "Example/Page",
   component: Page,
 };
 

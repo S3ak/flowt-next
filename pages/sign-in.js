@@ -7,7 +7,7 @@ import SignInForm from "../features/sign-in";
 import Section from "../components/section";
 import Heading from "../components/heading";
 
-import Layout from "../layouts/Minimal";
+import Layout from "../layouts/minimal";
 
 export default function SignIn() {
   return (

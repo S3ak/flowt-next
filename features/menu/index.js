@@ -1,11 +1,11 @@
-import { useMemo } from 'react';
-import Link from 'next/link';
-import { FaTimes } from 'react-icons/fa';
+import { useMemo } from "react";
+import Link from "next/link";
+import { FaTimes } from "react-icons/fa";
 
-import useNav from '../../libs/nav/useNav';
-import Button from '../../components/button';
+import useNav from "../../libs/nav/useNav";
+import Button from "../../components/button";
 
-import { Wrapper, List, Item, Header, Main, Footer, Toggle } from './styled';
+import { Wrapper, List, Item, Header, Main, Footer, Toggle } from "./styled";
 
 export default function NavigationMenu() {
   const { items, toggleNav } = useNav();

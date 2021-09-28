@@ -1,10 +1,10 @@
-import { FaBars } from 'react-icons/fa';
+import { FaBars } from "react-icons/fa";
 
-import { Wrapper, LastCol, MidCol, Toggle, NavContainer } from './styled';
-import NavigationMenu from '../menu';
+import { Wrapper, LastCol, MidCol, Toggle, NavContainer } from "./styled";
+import NavigationMenu from "../menu";
 
-import Title from '../../components/title';
-import useNav from '../../libs/nav/useNav';
+import Title from "../../components/title";
+import useNav from "../../libs/nav/useNav";
 
 export default function NavBar() {
   const { isOpen, toggleNav, selectedItem } = useNav();

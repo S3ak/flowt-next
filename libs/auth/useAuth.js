@@ -4,14 +4,14 @@ import {
   useContext,
   createContext,
   useCallback,
-} from 'react';
-import { useRouter } from 'next/router';
-import Cookie from 'js-cookie';
+} from "react";
+import { useRouter } from "next/router";
+import Cookie from "js-cookie";
 
 const authContext = createContext();
 
 function useProvideAuth() {
-  const cookie = Cookie.get('auth');
+  const cookie = Cookie.get("auth");
   const [isAuthed, setIsAuthed] = useState(cookie);
   const { pathname, push } = useRouter();
 
@@ -19,15 +19,15 @@ function useProvideAuth() {
   const logout = useCallback(() => setIsAuthed(false), []);
 
   useEffect(() => {
-    if (pathname === '/sign-up') {
-      return Cookie.remove('auth');
+    if (pathname === "/sign-up") {
+      return Cookie.remove("auth");
     }
 
     if (!isAuthed) {
-      push('/sign-in');
-      Cookie.remove('auth');
+      push("/sign-in");
+      Cookie.remove("auth");
     } else {
-      Cookie.set('auth', true);
+      Cookie.set("auth", true);
     }
   }, [isAuthed]);
 

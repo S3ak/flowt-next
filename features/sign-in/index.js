@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
-import { useFormik } from 'formik';
+import { useEffect, useState } from "react";
+import { useFormik } from "formik";
 
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+import { useRouter } from "next/router";
+import Link from "next/link";
 
-import { Wrapper, Block, ActionSection } from './styled';
-import validationSchema, { signInFormSchema } from './validationSchema';
+import { Wrapper, Block, ActionSection } from "./styled";
+import validationSchema, { signInFormSchema } from "./validationSchema";
 
-import Text from '../../components/text';
-import Form from '../../components/form';
-import Button from '../../components/form/button';
-import Input from '../../components/form/input-field';
+import Text from "../../components/text";
+import Form from "../../components/form";
+import Button from "../../components/form/button";
+import Input from "../../components/form/input-field";
 
-import useAuth from '../../libs/auth/useAuth';
+import useAuth from "../../libs/auth/useAuth";
 
 export default function SignInForm() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -23,8 +23,8 @@ export default function SignInForm() {
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
-        email: '',
-        password: '',
+        email: "",
+        password: "",
       },
       validationSchema,
       onSubmit: async ({ email, password }) => {
@@ -36,7 +36,7 @@ export default function SignInForm() {
 
           login();
           setIsSuccess(true);
-          push('/home');
+          push("/home");
         } catch (error) {
           setError(error);
         }
@@ -97,7 +97,7 @@ export default function SignInForm() {
 
       <Block>
         <Text>
-          Don&apos;t have an account?{' '}
+          Don&apos;t have an account?{" "}
           <Link href="/sign-up" passHref>
             <Button kind="text">Sign up</Button>
           </Link>
