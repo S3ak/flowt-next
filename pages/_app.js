@@ -1,10 +1,10 @@
-import '../styles/globals.css';
-import 'animate.css';
+import "../styles/globals.css";
+import "animate.css";
 
-import { AuthProvider } from '../libs/auth/useAuth';
-import { NavProvider } from '../libs/nav/useNav';
+import { AuthProvider } from "../libs/auth/useAuth";
+import { NavProvider } from "../libs/nav/useNav";
 
-import DefaultLayout from '../layouts/default';
+import DefaultLayout from "../layouts/default";
 
 function MyApp({ Component, pageProps }) {
   const getLayout =

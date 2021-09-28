@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import SignUpForm from '../features/sign-up';
+import Head from "next/head";
+import SignUpForm from "../features/sign-up";
 
-import Layout from '../layouts/Minimal';
+import Layout from "../layouts/Minimal";
 
 export default function SignUp() {
   return (

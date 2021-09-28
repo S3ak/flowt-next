@@ -1,8 +1,8 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import Section from '../components/section';
+import Section from "../components/section";
 
-import Timeline from '../features/timeline';
+import Timeline from "../features/timeline";
 
 export function Home() {
   return (
