@@ -1,4 +1,13 @@
 {
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  },
   "extends": [
     "next",
     "next/core-web-vitals",
