@@ -1,14 +1,5 @@
 {
   "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto",
-        "singleQuote": false
-      }
-    ]
-  },
   "extends": [
     "next",
     "next/core-web-vitals",
