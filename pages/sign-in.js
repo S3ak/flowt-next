@@ -7,6 +7,8 @@ import SignInForm from "../features/sign-in";
 import Section from "../components/section";
 import Heading from "../components/heading";
 
+import Layout from "../layouts/minimal";
+
 export default function SignIn() {
   return (
     <>
@@ -29,8 +31,13 @@ export default function SignIn() {
 
       <Section>
         <Heading>Welcome to Flowt</Heading>
+
         <SignInForm />
       </Section>
     </>
   );
 }
+
+SignIn.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

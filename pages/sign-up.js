@@ -1,7 +1,7 @@
 import Head from "next/head";
-import s from "../styles/Splash.module.css";
-import u from "../styles/Utility.module.css";
 import SignUpForm from "../features/sign-up";
+
+import Layout from "../layouts/minimal";
 
 export default function SignUp() {
   return (
@@ -12,9 +12,11 @@ export default function SignUp() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        <SignUpForm />
-      </div>
+      <SignUpForm />
     </>
   );
 }
+
+SignUp.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

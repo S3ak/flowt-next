@@ -4,9 +4,7 @@ import Section from "../components/section";
 
 import Timeline from "../features/timeline";
 
-export default function Home() {
-  const username = "username";
-
+export function Home() {
   return (
     <>
       <Head>
@@ -21,3 +19,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

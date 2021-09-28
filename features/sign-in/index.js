@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormik } from "formik";
 
 import { useRouter } from "next/router";
@@ -12,41 +12,42 @@ import Form from "../../components/form";
 import Button from "../../components/form/button";
 import Input from "../../components/form/input-field";
 
+import useAuth from "../../libs/auth/useAuth";
+
 export default function SignInForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState(null);
   const { push } = useRouter();
+  const { login, logout } = useAuth();
 
-  const {
-    handleSubmit,
-    handleChange,
-    values,
-    errors,
-    touched,
-    resetForm,
-  } = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema,
-    onSubmit: async ({ email, password }) => {
-      try {
-        // const { data } = await signIn({
-        //   email,
-        //   password,
-        // });
+  const { handleSubmit, handleChange, values, errors, touched, resetForm } =
+    useFormik({
+      initialValues: {
+        email: "",
+        password: "",
+      },
+      validationSchema,
+      onSubmit: async ({ email, password }) => {
+        try {
+          // const { data } = await signIn({
+          //   email,
+          //   password,
+          // });
 
-        setIsSuccess(true);
-      } catch (error) {
-        setError(error);
-      }
+          login();
+          setIsSuccess(true);
+          push("/home");
+        } catch (error) {
+          setError(error);
+        }
 
-      push("/home");
-      debugger;
-      resetForm();
-    },
-  });
+        resetForm();
+      },
+    });
+
+  useEffect(() => {
+    logout();
+  }, []);
 
   if (error) {
     return (
