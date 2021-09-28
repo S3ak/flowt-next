@@ -4,6 +4,10 @@ import { useState, useContext, createContext, useCallback } from "react";
 const NavContext = createContext();
 
 export function findCurrentItemByPathName(list = [], pathName = "string") {
+  if (list.length) {
+    return "Not Found";
+  }
+
   return list.find(({ path }) => path === pathName).label || "Not Found";
 }
 
