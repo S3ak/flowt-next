@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot | NavigationMenu renders Navigation unchanged 1`] = `
+<div
+  aria-label="Mobile Menu"
+  className="styled__Wrapper-sc-13y0qy3-0 hlGKXL"
+  role="navigation"
+>
+  <div
+    className="styled__Header-sc-13y0qy3-3 farCet"
+  >
+    <div
+      aria-pressed="true"
+      className="styled__Toggle-sc-13y0qy3-6 cNZBvV"
+      data-testid="nav-toggle"
+      onClick={[MockFunction]}
+      role="button"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 352 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="styled__Main-sc-13y0qy3-4 dPwhht"
+  >
+    <ul
+      className="styled__List-sc-13y0qy3-1 knzcOu"
+    >
+      <li
+        className="styled__Item-sc-13y0qy3-2 YACbR"
+      >
+        <a
+          href="/home"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li
+        className="styled__Item-sc-13y0qy3-2 YACbR"
+      >
+        <a
+          href="/activity"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Activity
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="styled__Footer-sc-13y0qy3-5 dKTjkO"
+  >
+    <div
+      className="button__Wrapper-sc-1jdlw4l-0 izrUQN"
+    >
+      <a
+        href="/sign-in"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Logout
+      </a>
+    </div>
+  </div>
+</div>
+`;

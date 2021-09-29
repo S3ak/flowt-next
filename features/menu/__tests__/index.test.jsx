@@ -1,5 +1,7 @@
 import React from "react";
+import renderer from "react-test-renderer";
 import { render, screen, fireEvent } from "@testing-library/react";
+
 import NavigationMenu from "../index";
 
 const mockItems = [
@@ -34,8 +36,15 @@ jest.mock("@/libs/nav/useNav", () => {
   }));
 });
 
+describe("Snapshot | NavigationMenu", () => {
+  it("renders Navigation unchanged", () => {
+    const tree = renderer.create(<NavigationMenu />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
+
 describe("Unit | NavigationMenu", () => {
-  it("renders a list of links", async () => {
+  it("renders a list of filtered links", async () => {
     render(<NavigationMenu />);
 
     fireEvent.click(screen.getByTestId("nav-toggle"));
