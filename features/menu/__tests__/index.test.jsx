@@ -38,8 +38,8 @@ jest.mock("@/libs/nav/useNav", () => {
 
 describe("Snapshot | NavigationMenu", () => {
   it("renders Navigation unchanged", () => {
-    const tree = renderer.create(<NavigationMenu />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(<NavigationMenu />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
 
