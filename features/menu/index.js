@@ -16,9 +16,15 @@ export default function NavigationMenu() {
   );
 
   return (
-    <Wrapper>
+    <Wrapper role="navigation" aria-label="Mobile Menu">
       <Header>
-        <Toggle onClick={toggleNav}>
+        <Toggle
+          tabindex="0"
+          role="button"
+          aria-pressed="true"
+          data-testid="nav-toggle"
+          onClick={toggleNav}
+        >
           <FaTimes />
         </Toggle>
       </Header>
