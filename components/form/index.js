@@ -6,6 +6,7 @@ const Form = styled.form`
   flex-direction: column;
   gap: var(--size-m);
   padding: var(--size-s);
+  background-color: #fff;
 `;
 
 export default Form;

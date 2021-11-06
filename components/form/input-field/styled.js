@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
 
 export const Label = styled.label`
   font-size: var(--f-size-xs);
+  padding-left: var(--s-m);
 `;
 
 export const ValidationMessage = styled.p`

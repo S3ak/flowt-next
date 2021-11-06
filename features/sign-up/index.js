@@ -1,52 +1,57 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 
-import { FormField, Label, Input, Message, Form, Wrapper } from "./styled";
+import { Wrapper } from "./styled";
 import validationSchema, { signUpFormSchema } from "./validationSchema";
 import createAccount from "./api";
+
+import { errorTypes } from "../../libs/config";
+
+import Form from "../../components/form";
+import InputField from "../../components/form/input-field";
 
 export default function SignUpForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState(null);
 
-  const {
-    handleSubmit,
-    handleChange,
-    values,
-    errors,
-    touched,
-    resetForm,
-  } = useFormik({
-    initialValues: {
-      fullName: "",
-      userName: "",
-      email: "",
-      password: "",
-      mobileNumber: "",
-    },
-    validationSchema,
-    onSubmit: async ({ email, userName, fullName, mobileNumber }) => {
-      const nameArr = fullName.split(" ");
-      const firstName = nameArr[0];
-      const lastName = nameArr[nameArr.length - 1];
+  const onSetError = (argError) => {
+    setError(argError);
+    trackError(argError, errorTypes.network);
+  };
 
-      try {
-        const { data } = await createAccount({
-          first_name: firstName,
-          last_name: lastName,
-          email,
-          handle: userName,
-          mobile_number: mobileNumber,
-        });
+  const { handleSubmit, handleChange, values, errors, touched, resetForm } =
+    useFormik({
+      initialValues: {
+        fullName: "",
+        userName: "",
+        email: "",
+        password: "",
+        mobileNumber: "",
+      },
+      validationSchema,
+      onSubmit: async ({ email, userName, fullName, mobileNumber }) => {
+        const nameArr = fullName.split(" ");
+        const firstName = nameArr[0];
+        const lastName = nameArr[nameArr.length - 1];
+        debugger;
 
-        setIsSuccess(true);
-      } catch (error) {
-        setError(error);
-      }
+        try {
+          const { data } = await createAccount({
+            first_name: firstName,
+            last_name: lastName,
+            email,
+            handle: userName,
+            mobile_number: mobileNumber,
+          });
 
-      resetForm();
-    },
-  });
+          setIsSuccess(true);
+        } catch (error) {
+          onSetError(error);
+        }
+
+        resetForm();
+      },
+    });
 
   if (error) {
     return (
@@ -71,20 +76,15 @@ export default function SignUpForm() {
       <Form onSubmit={handleSubmit}>
         {signUpFormSchema.map(({ id, label, type, placeholder }) => {
           return (
-            <FormField key={id}>
-              <Label htmlFor={id}>{label}</Label>
-
-              <Input
-                id={id}
-                name={id}
-                type={type}
-                value={values[id]}
-                placeholder={placeholder}
-                onChange={handleChange}
-              />
-
-              {errors[id] && touched[id] && <Message>{errors[id]}</Message>}
-            </FormField>
+            <InputField
+              name={id}
+              key={id}
+              label={label}
+              type={type}
+              placeholder={placeholder}
+              onChange={handleChange}
+              val={values[id]}
+            />
           );
         })}
 
