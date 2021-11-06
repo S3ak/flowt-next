@@ -3,6 +3,7 @@ import "animate.css";
 
 import { AuthProvider } from "../libs/auth/useAuth";
 import { NavProvider } from "../libs/nav/useNav";
+import GlobalStyles from "../styles/global.styled";
 
 import DefaultLayout from "../layouts/default";
 
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <AuthProvider>
+      <GlobalStyles />
       <NavProvider>{getLayout(<Component {...pageProps} />)}</NavProvider>
     </AuthProvider>
   );
