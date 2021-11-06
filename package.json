@@ -52,6 +52,8 @@
     "jest-styled-components": "^7.0.5",
     "miragejs": "^0.1.41",
     "prettier": "2.3.2",
-    "react-test-renderer": "^17.0.2"
+    "react-test-renderer": "^17.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
   }
 }
