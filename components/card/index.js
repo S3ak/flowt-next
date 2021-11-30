@@ -1,5 +1,7 @@
 import { Wrapper } from "./styled";
 
-export default function MinimalLayout({ children }) {
+const Card = ({ children }) => {
   return <Wrapper>{children}</Wrapper>;
-}
+};
+
+export default Card;

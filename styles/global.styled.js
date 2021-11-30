@@ -5,10 +5,14 @@ export const globalStyles = createGlobalStyle`
     --bg-main: purple;
     --w-container: 1000px;
     --w-content: 800px;
+
+    // Note: Z-index
     --z-rear: 100;
     --z-background: 200;
     --z-forefront: 400;
     --z-foreground: 300;
+
+    --bg: background: radial-gradient(203.27% 102.9% at 50% -2.9%, #441AB8 0%, #2D0995 100%);
 
     /* // https://coolors.co/606c38-283618-fefae0-dda15e-bc6c25 */
     --color-primary: #fefae0;
@@ -33,7 +37,7 @@ export const globalStyles = createGlobalStyle`
     --c-muted: #bdbdbd;
     --c-accent: var(--color-quinary);
     --c-text: var(--color-black);
-    --c-text--inverse: var(--color-primary);
+    --c-text--inverse: var(--color-white);
     --c-bg: var(--color-white);
     --c-bg--inverse: var(--color-gradrient-primary);
 
@@ -81,12 +85,14 @@ export const globalStyles = createGlobalStyle`
 
   body {
     height: 100%;
+    background: var(--c-bg--inverse);
   }
 
   body > div:first-child,
   #__next,
   #__next > div {
     height: 100%;
+    overflow: auto;
   }
 
   html,
