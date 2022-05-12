@@ -1,0 +1,19 @@
+import { Meta } from "@storybook/addon-docs";
+
+import { signUpFormSchema } from "./validationSchema";
+import Form from "../../components/form";
+import InputField from "../../components/form/input-field";
+import Button from "../../components/form/button";
+
+<Meta title="Features/Form/sign-up" />
+
+# Welcome to Storybook
+
+We use this form to capture user details.
+
+<Form>
+  {signUpFormSchema.map((x) => {
+    return <InputField />;
+  })}
+  <Button>Submit</Button>
+</Form>

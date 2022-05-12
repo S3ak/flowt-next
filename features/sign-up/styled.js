@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   margin: auto;
   max-width: var(--content-container-width);
   padding: var(--size-l);
-  background: white;
   border-radius: 16px;
 
   animation: fadeIn;
