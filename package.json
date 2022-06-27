@@ -15,18 +15,21 @@
     "e2e": "start-server-and-test start http://localhost:3000 cypress",
     "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:update": "jest -u"
+
   },
   "dependencies": {
     "@storybook/eslint-config-storybook": "^3.1.2",
     "animate.css": "^4.1.1",
     "formik": "^2.2.9",
     "js-cookie": "^3.0.1",
-    "next": "11.0.1",
+    "next": "12.1.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
     "styled-components": "^5.3.0",
+    "styled-tools": "^1.7.2",
     "swr": "^0.5.6",
     "yup": "^0.32.9"
   },
@@ -52,6 +55,8 @@
     "jest-styled-components": "^7.0.5",
     "miragejs": "^0.1.41",
     "prettier": "2.3.2",
-    "react-test-renderer": "^17.0.2"
+    "react-test-renderer": "^17.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
   }
 }

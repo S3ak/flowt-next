@@ -64,7 +64,6 @@ exports[`Snapshot | NavigationMenu renders Navigation unchanged 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background: var(--c-bg--inverse);
   border-radius: 5px 0px 0px 5px;
 }
 

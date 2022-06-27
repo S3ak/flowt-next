@@ -12,6 +12,7 @@ export const InputField = ({
   onChange,
   placeholder,
 }) => {
+  const isMessageVisible = hasError && message;
   return (
     <Wrapper>
       <Label>{name}</Label>
@@ -27,7 +28,7 @@ export const InputField = ({
         onChange={onChange}
       />
 
-      {!!message && <ValidationMessage>{message}</ValidationMessage>}
+      {!!isMessageVisible && <ValidationMessage>{message}</ValidationMessage>}
     </Wrapper>
   );
 };

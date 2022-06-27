@@ -11,7 +11,6 @@ export const Wrapper = styled.div`
   animation-duration: 500ms;
   display: flex;
   flex-direction: column;
-  background: var(--c-bg--inverse);
   border-radius: 5px 0px 0px 5px;
 `;
 

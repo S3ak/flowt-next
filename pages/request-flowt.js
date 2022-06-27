@@ -4,6 +4,7 @@ import Section from "../components/section";
 import Beneficiaries from "../features/beneficiaries";
 import RequestForm from "../features/request-form";
 
+/* Endpoint: // ${base_api_url}/flowt/request */
 export default function RequestFlowt() {
   return (
     <>
