@@ -15,7 +15,9 @@
     "e2e": "start-server-and-test start http://localhost:3000 cypress",
     "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:update": "jest -u"
+
   },
   "dependencies": {
     "@storybook/eslint-config-storybook": "^3.1.2",

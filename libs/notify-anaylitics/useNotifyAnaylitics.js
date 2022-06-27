@@ -1,8 +1,7 @@
-import { useRouter } from "next/router";
 import axios from "axios";
 import { useState, useContext, createContext } from "react";
 
-const NavContext = createContext();
+const SystemMessangerContext = createContext();
 
 const useSystemMessanger = (event, defaultMessage = "Something went wrong") => {
     const [message, setMessage] = useState(defaultMessage);
@@ -44,12 +43,12 @@ const useSystemMessanger = (event, defaultMessage = "Something went wrong") => {
 export const SystemMessangerProvider = (chidren) => {
     const message = useSystemMessanger();
     return (
-    <NavContext.Provider value={message}>
+    <SystemMessangerContext.Provider value={message}>
         {children}
-    </NavContext.Provider>
+    </SystemMessangerContext.Provider>
     )
 }
 
-export default function useSystemMessanger() {
-    return useContext(NavContext);
+export default function useSystemMessangerContext() {
+    return useContext(SystemMessangerContext);
 }
