@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This is the front-end web application for the Flowt rentation application. This provides a platform to test the business hopthesis using front-end html, CSS and javascript to quickly iterate and perform tests.
+
+This code repository is the production code to be deployed on the production[flowt.app](www.flowt.com/signin) domain.
+
 
 ## Getting Started
 
